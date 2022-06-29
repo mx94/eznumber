@@ -1,0 +1,40 @@
+{
+  "name": "eznumber",
+  "version": "0.1.0",
+  "description": "A number adapter",
+  "main": "./dist/eznumber.esm.js",
+  "module": "./dist/eznumber.esm.js",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c --environment NODE_ENV:production"
+  },
+  "keywords": [
+    "number",
+    "float",
+    "decimal",
+    "scientificnumber"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.5",
+    "@babel/plugin-transform-runtime": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-typescript": "^7.17.12",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "eslint": "^8.18.0",
+    "rollup": "^2.75.7",
+    "rollup-plugin-clear": "^2.0.7",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-visualizer": "^5.6.0",
+    "typescript": "^4.7.4"
+  }
+}
