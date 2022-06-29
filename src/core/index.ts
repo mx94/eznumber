@@ -1,9 +1,9 @@
-import { EnumPositiveOrNegative } from '../types/core'
+import { EnumPositiveOrNegative, EzNumberParams } from '../types/core'
 import { parse } from './parse'
 import { stringify } from './stringify'
 
 class Core {
-  constructor(directive: string) {
+  constructor(directive: EzNumberParams) {
     parse(this, directive)
     return this
   }

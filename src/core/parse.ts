@@ -1,4 +1,4 @@
-import { EzNb } from '../types/core'
+import { EzNb, EzNumberParams } from '../types/core'
 import { NUMERIC, INVALID } from '../shared/constants'
 import { getPN } from '../shared/utils'
 
@@ -50,12 +50,21 @@ export function initFlag(context: EzNb, num: string) {
   }
 }
 
-export function parse(context: EzNb, directive: string) {
+export function parse(context: EzNb, directive: EzNumberParams) {
+  if (!directive) {
+    return
+  }
+
   let num = directive
 
+  if (typeof num === 'number') {
+    initFlag(context, String(num))
+    return
+  }
+
   // 有额外操作
-  if (directive.includes('|')) {
-    const dArr = directive.split('|').map((item) => item.trim())
+  if ((directive as string).includes('|')) {
+    const dArr = (directive as string).split('|').map((item) => item.trim())
     num = dArr[0]
 
     initFlag(context, num)
@@ -64,5 +73,4 @@ export function parse(context: EzNb, directive: string) {
     }
     return
   }
-  initFlag(context, num)
 }

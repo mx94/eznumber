@@ -1,6 +1,7 @@
 import Core from './core'
+import { EzNumberParams } from './types/core'
 
-function EzNumber(directive: string) {
+function EzNumber(directive: EzNumberParams) {
   return new Core(directive).valueOf()
 }
 
