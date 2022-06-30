@@ -1,7 +1,6 @@
 import { EnumPositiveOrNegative, EzNumberParams } from '../types/core'
 import { parse } from './parse'
 import { stringify } from './stringify'
-
 class Core {
   constructor(directive: EzNumberParams) {
     parse(this, directive)
@@ -14,17 +13,13 @@ class Core {
 
   curry: any = []
 
-  valueOf() {
-    return stringify(this, false, !!this.curry[0])
+  run(options: Record<string, any>) {
+    return stringify(this, false)
   }
 
-  toFixed(decimals?: number) {
-    if (decimals !== undefined) {
-      for (decimals = decimals + this.multiple + 1; this.curry.length < decimals; ) {
-        this.curry.push(0)
-      }
-    }
-    return stringify(this, false, !!this.curry[0])
+  onError(err: Error) {
+    console.error(err)
+    return err
   }
 }
 
