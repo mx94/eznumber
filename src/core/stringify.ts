@@ -17,6 +17,10 @@ export function stringify(context: EzNb, doExponential: boolean) {
   let num = context.curry.join('')
   let numLen = num.length
 
+  if (context.percent === '+%') {
+    multiple += 2
+  }
+
   if (doExponential) {
     num =
       num.charAt(0) +
@@ -41,7 +45,7 @@ export function stringify(context: EzNb, doExponential: boolean) {
   }
 
   if (context.percent === '+%') {
-    // todo: 百分数转化
+    num = num + '%'
   } else if (context.thousandSeparated) {
     num = formatNumberRgx(num)
   }
@@ -52,6 +56,14 @@ export function stringify(context: EzNb, doExponential: boolean) {
 
   if (context.pn > 0 && context.positive) {
     num = '+' + num
+  }
+
+  if (context.prefix) {
+    num = context.prefix + num
+  }
+
+  if (context.suffix) {
+    num = num + context.suffix
   }
 
   return num
