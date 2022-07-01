@@ -9,7 +9,12 @@ export function stringify(context: EzNb, doExponential: boolean) {
   // 保留小数
   if (context.decimals !== undefined) {
     let fixedCount = context.decimals
-    for (fixedCount = fixedCount + context.multiple + 1; context.curry.length < fixedCount; ) {
+    const percentCount = 0 + (context.percent === '+%' ? 2 : 0)
+    for (
+      fixedCount = fixedCount + percentCount + context.multiple + 1;
+      context.curry.length < fixedCount;
+
+    ) {
       context.curry.push(0)
     }
   }

@@ -34,8 +34,7 @@ EzNumber('123.98900 | <=2').run() // '123.98'
 ### Percentage
 
 ```javascript
-EzNumber('0.028 | %').run() // '2.8%'
-EzNumber('-0.028%').run() // '0.028'
+EzNumber('0.028 | +%').run() // '2.8%'
 ```
 
 ### Prefix
