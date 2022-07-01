@@ -35,18 +35,19 @@ EzNumber('123.98900 | <=2').run() // '123.98'
 
 ```javascript
 EzNumber('0.028 | +%').run() // '2.8%'
+EzNumber('-0.00028 | +% =6').run() // '-0.028000%'
 ```
 
 ### Prefix
 
 ```javascipt
-EzNumber('0.000001 | ^≈ ^ >=8').run() // '≈ 0.00000100'
+EzNumber('0.000001 | ^≈^ >=8').run() // '≈ 0.00000100'
 ```
 
 ### Suffix
 
 ```javascript
-EzNumber('0.000001 | $ USD$ >=8').run() // '0.00000100 USD'
+EzNumber('0.000001 | $USD$ >=8').run() // '0.00000100 USD'
 ```
 
 New features are on the way...
